@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-container">
+    <h2>Hello {{ username }}!</h2>
+    <a class="btn-link" href="{{ url_for('addexp') }}">➕ Add Expense</a>
+    
+    <h3>Expenses</h3>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr><th>Product</th><th>Category</th><th>Amount</th></tr>
+            </thead>
+            <tbody>
+            {% for name, category, amount in expenses %}
+                <tr><td>{{ name }}</td><td>{{ category }}</td><td>{{ amount }}</td></tr>
+            {% else %}
+                <tr><td colspan="3">No expenses added yet.</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="summary">
+        <p>Total Spent: {{ total_spent }}</p>
+        <p>Remaining: {{ remaining }}</p>
+    </div>
+
+    <a class="btn-link" href="{{ url_for('settings') }}">Settings</a>
+    <a class="btn-link" href="{{ url_for('logout') }}">Logout</a>
+</div>
+</body>
+</html>

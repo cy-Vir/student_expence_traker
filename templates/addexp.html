@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Enter the Expenses</h2>
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    <form id="expense" method="POST">
+        <!-- Product Name -->
+        <input type="text" class="add" name="name" placeholder="Name of product" required><br><br>
+
+        <!-- Category -->
+        <select class="select" name="category" required>
+            <option value="Food & Drinks">🍔 Food & Drinks</option>
+            <option value="Shopping">👜 Shopping</option>
+            <option value="Housing">🏠 Housing</option>
+            <option value="Transportation">🚊 Transportation</option>
+            <option value="Vehicle">🚘 Vehicle</option>
+            <option value="Life & Entertainment" selected>📺 Life & Entertainment</option>
+            <option value="Communication,PC">📱 Communication, PC</option>
+            <option value="Financial Expenses">💵 Financial Expenses</option>
+            <option value="Investments">📶 Investments</option>
+            <option value="Income">💰 Income</option>
+            <option value="Others">👤 Others</option>
+        </select><br><br>
+
+        <!-- Amount -->
+        <input type="number" step="0.01" class="add" name="amount" placeholder="Amount" required><br><br>
+
+        <input type="submit" value="Submit" class="sub">
+    </form>
+
+    <a class="btn-link" href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</div>
+</body>
+</html>

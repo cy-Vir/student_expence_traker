@@ -1,0 +1,185 @@
+/* -----------------------------------
+   General Reset & Base Styles
+----------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+    color: #2f3640;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* centers horizontally */
+    align-items: center;    /* centers vertically */
+    padding: 20px;
+}
+
+/* -----------------------------------
+   Containers
+----------------------------------- */
+.container,
+.dashboard-container {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px; /* default for forms */
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    width: 90%;
+}
+
+/* -----------------------------------
+   Headings
+----------------------------------- */
+h2, h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2d3436;
+}
+
+/* -----------------------------------
+   Input Fields & Buttons
+----------------------------------- */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #dcdde1;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #0984e3;
+    outline: none;
+}
+
+/* Submit Button */
+input[type="submit"],
+.sub {
+    width: 100%;
+    padding: 12px;
+    background: #0984e3;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover,
+.sub:hover {
+    background: #74b9ff;
+}
+
+/* -----------------------------------
+   Error Messages
+----------------------------------- */
+.error {
+    color: #d63031;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* -----------------------------------
+   Table Styling (Dashboard)
+----------------------------------- */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+thead {
+    background: #0984e3;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background: #f1f2f6;
+}
+
+/* -----------------------------------
+   Dashboard Summary
+----------------------------------- */
+.summary {
+    margin-top: 20px;
+    padding: 15px;
+    background: #dfe6e9;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* -----------------------------------
+   Buttons / Links
+----------------------------------- */
+.btn-link {
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    padding: 8px 15px;
+    background: #00b894;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    background: #55efc4;
+}
+
+/* -----------------------------------
+   Select Dropdown Styling
+----------------------------------- */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #ffffff url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+/* -----------------------------------
+   Form Add Expense Specific
+----------------------------------- */
+.exp form {
+    display: flex;
+    flex-direction: column;
+}
+
+.exp input,
+.exp select {
+    margin-bottom: 15px;
+}
